@@ -1,0 +1,22 @@
+{% extends 'loyer/base.html' %}
+{% block title %} House Details {% endblock %}
+{% block content %}
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title">Details for {{ immeuble.address }}</h2>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Address:</strong> {{ immeuble.address }}</li>
+        <li class="list-group-item"><strong>Number of Offices:</strong> {{ immeuble.nbre_bureau }}</li>
+        <li class="list-group-item"><strong>Number of Rooms:</strong> {{ immeuble.nbre_chambres }}</li>
+        <li class="list-group-item"><strong>Number of Toilets:</strong> {{ immeuble.nbre_toilettes }}</li>
+        <li class="list-group-item"><strong>Owner:</strong> {{ immeuble.owner_name }}</li>
+        <li class="list-group-item"><strong>Owner Phone:</strong> {{ immeuble.owner_phone }}</li>
+      </ul>
+      {% if immeuble.image %}
+      <img src="{{ immeuble.image.url }}" class="img-fluid mt-3" alt="House image">
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

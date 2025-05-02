@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="{% static "style.css" %}" rel="stylesheet">
+    <title>Sign in & Sign up Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form method="POST" class="sign-in-form">
+          	{% csrf_token %}
+            <h2 class="title">Sign in</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" class="form-control"  placeholder="Enter Username" name="username">
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" class="form-control"  placeholder="Enter Password" name="password">
+            </div>
+
+            <!-- <input type="submit" value="Login" class="btn solid" /> -->
+            <button type="submit" class="btn btn-secondary">Login</button> or 
+            <button  class="btn btn-secondary"><a class="nav-link" href="{% url 'register' %}">Register</a></button>
+            <p class="social-text">Or Sign in with social platforms</p>
+            <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </form>
+    </script>
+  </body>
+</html>
